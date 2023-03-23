@@ -14,55 +14,93 @@
   </div>
   <form class="form" name="submit-to-google-sheet">
     <p style="text-align: center; font-size: 14px;">¡Rellena un formulari diferent per cada camiseta que vulguis!</p>
-    <div>
-      <label for="nombre">Nom *</label>
-      <label class="sublabel">De sa persona que disfrutarà sa camiseta</label>
+
+    <div class="field">
+      <div class="header-label">
+        <label for="nombre">Nom *</label>
+        <p class="sublabel">De sa persona que disfrutarà sa camiseta</p>
+      </div>
+      <input id="nombre" name="nombre" type="text" placeholder="L'Amo de Son Blanc" required>
     </div>
-    <input id="nombre" name="nombre" type="text" placeholder="L'Amo de Son Blanc" required>
-    <div>
-      <label for="email">Email, Instagram o Whatsapp</label>
-      <p class="sublabel">Mus servira per confirmar amb tu es pedido i per comunicar-nos en cas de colca imprevist.</p>
+
+
+    <div class="field">
+      <div class="header-label">
+        <label for="email">Email, Instagram o Whatsapp *</label>
+        <p class="sublabel">Mus servira per confirmar amb tu es pedido i per comunicar-nos en cas de colca imprevist.</p>
+      </div>
+      <input id="instagram" name="instagram" type="text" placeholder="@Lamo_7" required>
     </div>
-    <input id="instagram" name="instagram" type="text" placeholder="@Lamo_7" required>
-    <div>
-      <label>Disseny *</label>
-      <label class="sublabel">Més fotos a n'es nostro Instagram (<a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>)</label>
+
+
+    <div class="field">
+      <div class="header-label">
+        <label>Disseny *</label>
+        <p class="sublabel">Més fotos a n'es nostre Instagram (<a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>)</p>
+      </div>
+      <div>
+        <span>Disseny 1</span>
+        <input type="radio" name="disseny" value="Disseny 1">
+        <span>Disseny 2</span>
+        <input type="radio" name="disseny" value="Disseny 2">
+      </div>
     </div>
-    <div>
-      <span>Disseny 1</span>
-      <input type="radio" name="disseny" value="Disseny 1">
-      <span>Disseny 2</span>
-      <input type="radio" name="disseny" value="Disseny 2">
+
+
+    <div class="field">
+      <div class="header-label">
+        <label>Talla *</label>
+        <p class="sublabel"></p>
+      </div>
+      <div>
+        <span>S</span>
+        <input type="radio" name="talla" value="S">
+        <span>M</span>
+        <input type="radio" name="talla" value="M">
+        <span>L</span>
+        <input type="radio" name="talla" value="M">
+        <span>XL</span>
+        <input type="radio" name="talla" value="M">
+        <span>XXL</span>
+        <input type="radio" name="talla" value="M">
+      </div>
     </div>
-    <label>Talla *</label>
-    <div>
-      <span>S</span>
-      <input type="radio" name="talla" value="S">
-      <span>M</span>
-      <input type="radio" name="talla" value="M">
-      <span>L</span>
-      <input type="radio" name="talla" value="M">
-      <span>XL</span>
-      <input type="radio" name="talla" value="M">
-      <span>XXL</span>
-      <input type="radio" name="talla" value="M">
+
+
+    <div class="field">
+      <div class="header-label">
+        <label>Tipus *</label>
+        <p class="sublabel"></p>
+      </div>
+      <div>
+        <span>Mànigues</span>
+        <input type="radio" name="tipus" value="Manigues">
+        <span>Estirants</span>
+        <input type="radio" name="tipus" value="Estirants">
+      </div>
     </div>
-    <label>Tipus *</label>
-    <div>
-      <span>Mànigues</span>
-      <input type="radio" name="tipus" value="Manigues">
-      <span>Estirants</span>
-      <input type="radio" name="tipus" value="Estirants">
+
+
+    <div class="field">
+      <div class="header-label">
+        <label>Persona d'entrega o direcció *</label>
+        <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem d'entregar sa camiseta o direcció d'entrega.</p>
+      </div>
+      <input id="entrega" name="entrega" type="textarea" placeholder="Carrer de Sant Joan n. 4" required>
     </div>
-    <div>
-      <label>Persona d'entrega o direcció</label>
-      <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem d'entregar sa camiseta o direcció d'entrega.</p>
+
+
+    <div class="field">
+      <div class="header-label">
+        <label">Alguna cosa més a dir-nos?</label>
+        <p class="sublabel"></p>
+      </div>
+      <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons">
     </div>
-    <input id="entrega" name="entrega" type="text" placeholder="Pere Pons" required>
-    <label>Tens alguna cosa mes a dirnos?</label>
-    <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons" required>
-    <button id="email-submit" type="submit">Enviar</button>
-    <div>Si vols avançar es pagament, ho pots fer directament per Bizuum en aquest telèfon: 636-671-681 (Rita) i posant com a concepte es teu nom complert o es seguent codi: <p class="code" id="code" /></div>
+
+
+    <button id="email-submit" type="submit" class="send">Enviar</button>
+    <div>Si vols avançar es pagament, ho pots fer directament per Bizuum en aquest telèfon: 636671681 (Rita) i posant com a concepte es teu nom complert o es seguent codi: <p class="code" id="code" /></div>
     <input type="text" id="code-hide" name="code" style="display: none;">
   </form>
 </body>
@@ -99,6 +137,12 @@
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
+  .field {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 16px;
+  }
+
   .header {
     display: flex;
     justify-content: center;
@@ -116,18 +160,27 @@
   }
 
   input[type=text],input[type=email] {
-    height: 25px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+    box-sizing: border-box;
   }
 
   input[type=textarea] {
-    height: 100px;
+    height: 80px;
     vertical-align: top;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+    box-sizing: border-box;
   }
 
   .sublabel {
     font-size: 10px;
     color: gray;
     display: block;
+    margin-top: 3px;
   }
 
   p {
@@ -141,5 +194,19 @@
   .image {
     width: 100%;
     max-width: 250px;
+  }
+
+  .header-label {
+    margin-bottom: 16px;
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+    border-color: lightgray;
+  }
+
+  .send {
+    background-color: #f3f3f3;
+    border: 1px solid black;
+    border-radius: 16px;
+    height: 40px;
   }
 </style>
