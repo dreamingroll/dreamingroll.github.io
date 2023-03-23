@@ -1,1 +1,23 @@
-<p>HELLO WORLD, DREAMING</p>
+<form style="text-align:center;" name="submit-to-google-sheet">
+  <input name="email" type="email" placeholder="Email" required>
+  <button id="email-submit" type="submit">Send</button>
+</form>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwtoscUq_J_vJJzqzZNEhhQ6i4RSrpLGxr4PltAGC_w383chOJTP9nmlhZuh-6IQOAE/exec"
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    submit_button = document.querySelector("button#email-submit");
+    submit_button.innerText = "Sending...";
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(function(response){
+                console.log('Success!', response);
+                submit_button.innerText = "Done!";
+                })
+      .catch(function(error) {
+                console.error('Error!', error.message);
+                submit_button.innerText = "Error!";
+                })
+  })
+</script> 
