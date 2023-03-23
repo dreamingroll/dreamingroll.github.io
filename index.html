@@ -10,25 +10,29 @@
 
 <body>
   <div class="header">
-    <img src="/rita.png" width="50%">
+    <img src="/rita.png" class="image">
   </div>
   <form class="form" name="submit-to-google-sheet">
-    Rellena es formulari per cada camiseta que vulguis.
-    <label for="nombre">Nom *</label>
-    <input id="nombre" name="nombre" type="text" placeholder="L'Amo de Son Blanc" required>
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" placeholder="lamo@gmail.com" required>
+    <p style="text-align: center; font-size: 14px;">¡Rellena un formulari diferent per cada camiseta que vulguis!</p>
     <div>
-      <label for="nombre">Instagram o Whatsapp *</label>
+      <label for="nombre">Nom *</label>
+      <label class="sublabel">De sa persona que disfrutarà sa camiseta</label>
+    </div>
+    <input id="nombre" name="nombre" type="text" placeholder="L'Amo de Son Blanc" required>
+    <div>
+      <label for="email">Email, Instagram o Whatsapp</label>
       <p class="sublabel">Mus servira per confirmar amb tu es pedido i per comunicar-nos en cas de colca imprevist.</p>
     </div>
     <input id="instagram" name="instagram" type="text" placeholder="@Lamo_7" required>
-    <label>Genere *</label>
     <div>
-      <span>Dona</span>
-      <input type="radio" name="genere" value="Dona">
-      <span>Home</span>
-      <input type="radio" name="genere" value="Home">
+      <label>Disseny *</label>
+      <label class="sublabel">Més fotos a n'es nostro Instagram (<a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>)</label>
+    </div>
+    <div>
+      <span>Disseny 1</span>
+      <input type="radio" name="disseny" value="Disseny 1">
+      <span>Disseny 2</span>
+      <input type="radio" name="disseny" value="Disseny 2">
     </div>
     <label>Talla *</label>
     <div>
@@ -36,38 +40,39 @@
       <input type="radio" name="talla" value="S">
       <span>M</span>
       <input type="radio" name="talla" value="M">
+      <span>L</span>
+      <input type="radio" name="talla" value="M">
+      <span>XL</span>
+      <input type="radio" name="talla" value="M">
+      <span>XXL</span>
+      <input type="radio" name="talla" value="M">
     </div>
     <label>Tipus *</label>
     <div>
       <span>Mànigues</span>
-      <input type="radio" name="manigues" value="Manigues">
+      <input type="radio" name="tipus" value="Manigues">
       <span>Estirants</span>
-      <input type="radio" name="manigues" value="Estirants">
-    </div>
-    <label>Disseny *</label>
-    <div>
-      <span>Disseny 1</span>
-      <input type="radio" name="manigues" value="Manigues">
-      <span>Disseny 2</span>
-      <input type="radio" name="manigues" value="Estirants">
+      <input type="radio" name="tipus" value="Estirants">
     </div>
     <div>
       <label>Persona d'entrega o direcció</label>
-      <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem d'entregar sa camiseta o direcció d'entrega</p>
+      <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem d'entregar sa camiseta o direcció d'entrega.</p>
     </div>
     <input id="entrega" name="entrega" type="text" placeholder="Pere Pons" required>
     <label>Tens alguna cosa mes a dirnos?</label>
     <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons" required>
     <button id="email-submit" type="submit">Enviar</button>
-    <div>Si vols avançar es pagament, ho pots fer per Bizuum en aquest telèfon (Rita) posant com a concepte es seguent codi: <p class="code" id="code"></p></div>
+    <div>Si vols avançar es pagament, ho pots fer directament per Bizuum en aquest telèfon: 636-671-681 (Rita) i posant com a concepte es teu nom complert o es seguent codi: <p class="code" id="code" /></div>
+    <input type="text" id="code-hide" name="code" style="display: none;">
   </form>
 </body>
 
 </html>
 <script>
   window.onload = function() {
-    const code = Math.random().toString(16).slice(10).toUpperCase()
+    const code = Math.random().toString(16).slice(2, 6).toUpperCase()
     document.getElementById('code').innerHTML = code
+    document.getElementById('code-hide').value = code
   }
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwtoscUq_J_vJJzqzZNEhhQ6i4RSrpLGxr4PltAGC_w383chOJTP9nmlhZuh-6IQOAE/exec"
@@ -122,6 +127,7 @@
   .sublabel {
     font-size: 10px;
     color: gray;
+    display: block;
   }
 
   p {
@@ -130,5 +136,10 @@
 
   span {
     font-size: 16px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 250px;
   }
 </style>
