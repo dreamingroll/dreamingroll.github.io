@@ -43,11 +43,15 @@
         <label>Disseny *</label>
         <p class="sublabel">Més fotos a n'es nostre Instagram (<a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>)</p>
       </div>
-      <div>
-        <span>Disseny 1</span>
-        <input type="radio" name="disseny" value="Disseny 1">
-        <span>Disseny 2</span>
-        <input type="radio" name="disseny" value="Disseny 2">
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <input type="radio" id="radiobtn3" name="disseny" class="Send_data  input-hidden" value="Disseny 1" />
+        <label for="radiobtn3" style="display: flex; justify-content: center;">
+          <img class="image" src="/disseny1.png" style="border-radius:20px;" />
+        </label>
+        <input type="radio" id="radiobtn4" name="disseny" class="Send_data  input-hidden" value="Disseny 2" />
+        <label for="radiobtn4" style="display: flex; justify-content: center;">
+          <img class="image" src="/disseny2.png" style="border-radius:20px;" />
+        </label>
       </div>
     </div>
 
@@ -217,4 +221,20 @@
     border-radius: 16px;
     height: 40px;
   }
+
+
+  .input-hidden {
+  /* For Hiding Radio Button Circles */
+  position: absolute;
+  left: -9999px;
+}
+input[type="radio"]:checked + label > img {
+  border: 1px solid rgb(157, 255, 0);
+  box-shadow: 0 0 3px 3px #9e00e2;
+}
+input[type="radio"] + label > img {
+  border: 1px rgb(0, 0, 0);
+  padding: 10px;
+  transition: 500ms all;
+}
 </style>
