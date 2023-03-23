@@ -56,17 +56,15 @@
     <label>Tens alguna cosa mes a dirnos?</label>
     <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons" required>
     <button id="email-submit" type="submit">Enviar</button>
-    <div>Si vols avançar es pagament, ho pots fer per bizum en aquesta direcció posant com a concepte es seguent codi:</div>
-    <p id="code" onload="crearCode()"></p>
+    <div>Si vols avançar es pagament, ho pots fer per Bizuum en aquest telèfon (Rita) posant com a concepte es seguent codi: <p class="code" id="code"></p></div>
   </form>
 </body>
 
 </html>
 <script>
-
-  function crearCode () {
-    const code = Math.random().toString(5).slice(2).toUpperCase()
-    document.getElementById('code').innerText = code
+  window.onload = function() {
+    const code = Math.random().toString(16).slice(10).toUpperCase()
+    document.getElementById('code').innerHTML = code
   }
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwtoscUq_J_vJJzqzZNEhhQ6i4RSrpLGxr4PltAGC_w383chOJTP9nmlhZuh-6IQOAE/exec"
@@ -96,6 +94,10 @@
   .header {
     display: flex;
     justify-content: center;
+  }
+
+  .code {
+    display: inline;
   }
 
   .form {
