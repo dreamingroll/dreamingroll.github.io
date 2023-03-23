@@ -12,7 +12,12 @@
   <div class="header">
     <img src="/rita.png" class="image">
   </div>
-  <form class="form" name="submit-to-google-sheet">
+  <div id="buttons-next" style="display: none;">
+    <div>ENHORABONA! Hem registrat correctament sa teua pre-venda. Mus posarem en contacte amb tu per confirmar es teu pedido.</div>
+    <button onclick="window.location.reload()">Repetir formulari</button>
+    <button onclick="window.location = 'https://instagram.com/dreamingroll_art'">Sortir</button>
+  </div>
+  <form id="form" class="form" name="submit-to-google-sheet">
     <p style="text-align: center; font-size: 14px;">¡Rellena un formulari diferent per cada camiseta que vulguis!</p>
 
     <div class="field">
@@ -119,11 +124,14 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     submit_button = document.querySelector("button#email-submit");
+    submit_button.disabled = true
     submit_button.innerText = "Sending...";
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(function (response) {
         console.log('Success!', response);
         submit_button.innerText = "Done!";
+        document.getElementById('form').style.display = 'none'
+        document.getElementById('buttons-next').style.display = 'inherit'
       })
       .catch(function (error) {
         console.error('Error!', error.message);
