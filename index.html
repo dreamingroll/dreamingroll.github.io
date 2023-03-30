@@ -14,11 +14,14 @@
   </div>
   <div id="buttons-next" style="display: none;">
     <div>ENHORABONA! Hem registrat correctament sa teua pre-venda. Mus posarem en contacte amb tu per confirmar es teu pedido.</div>
+    <div>Si vols avançar es pagament, ho pots fer directament per Bizum en aquest telèfon: 636671681 (Rita) i posant com a concepte es teu nom complert o es seguent codi: <p class="code" id="code" /></div>
+    <p>Quan l'haguem rebut, contactarem amb tu per confirmar sa compra.</p>
     <button onclick="window.location.reload()">Repetir formulari</button>
     <button onclick="window.location = 'https://instagram.com/dreamingroll_art'">Sortir</button>
   </div>
   <form id="form" class="form" name="submit-to-google-sheet">
-    <p style="text-align: center; font-size: 14px;">¡Rellena un formulari diferent per cada camiseta que vulguis!</p>
+    <p style="text-align: center; font-size: 24px; font-weight: 700;">Hola!</p>
+    <p style="text-align: center; font-size: 14px;">¡Ompl es formulari i assegura't de tenir camiseta aquest any. A es final de tot, podras triar si en vols mes d'una amb aquestes característiques! Per demanar-ne altres amb un altre disseny o característica, ompl un altre formulari!</p>
 
     <div class="field">
       <div class="header-label">
@@ -34,7 +37,7 @@
         <label for="email">Email, Instagram o Whatsapp *</label>
         <p class="sublabel">Mus servira per confirmar amb tu es pedido i per comunicar-nos en cas de colca imprevist.</p>
       </div>
-      <input id="instagram" name="instagram" type="text" placeholder="@Lamo_7" required>
+      <input id="contacte" name="contacte" type="text" placeholder="@Lamo_7" required>
     </div>
 
 
@@ -43,15 +46,11 @@
         <label>Disseny *</label>
         <p class="sublabel">Més fotos a n'es nostre Instagram (<a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>)</p>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <input type="radio" id="radiobtn3" name="disseny" class="Send_data  input-hidden" value="Disseny 1" />
-        <label for="radiobtn3" style="display: flex; justify-content: center;">
-          <img class="image" src="/disseny1.jpeg" style="border-radius:20px;" />
-        </label>
-        <input type="radio" id="radiobtn4" name="disseny" class="Send_data  input-hidden" value="Disseny 2" />
-        <label for="radiobtn4" style="display: flex; justify-content: center;">
-          <img class="image" src="/disseny2.jpeg" style="border-radius:20px;" />
-        </label>
+      <div class="designs">
+        <input type="radio" id="radiobtn3" name="disseny" class="input-hidden" value="Disseny 1" />
+        <label for="radiobtn3"> <img class="image" src="/disseny1.jpeg" /></label>
+        <input type="radio" id="radiobtn4" name="disseny" class="input-hidden" value="Disseny 2" />
+        <label for="radiobtn4"><img class="image" src="/disseny2.jpeg" /></label>
       </div>
     </div>
 
@@ -61,17 +60,21 @@
         <label>Talla *</label>
         <p class="sublabel"></p>
       </div>
-      <div>
-        <span>S</span>
-        <input type="radio" name="talla" value="S">
-        <span>M</span>
-        <input type="radio" name="talla" value="M">
-        <span>L</span>
-        <input type="radio" name="talla" value="M">
-        <span>XL</span>
-        <input type="radio" name="talla" value="M">
-        <span>XXL</span>
-        <input type="radio" name="talla" value="M">
+      <div class="talles">
+        <input type="radio" id="radiobtn11" name="talla" class="input-hidden" value="Talla XXS" />
+        <label for="radiobtn11"><img class="image" src="/xxs.png" /></label>
+        <input type="radio" id="radiobtn5" name="talla" class="input-hidden" value="Talla XS" />
+        <label for="radiobtn5"><img class="image" src="/xs.png" /></label>
+        <input type="radio" id="radiobtn6" name="talla" class="input-hidden" value="Disseny S" />
+        <label for="radiobtn6"><img class="image" src="/s.png" /></label>
+        <input type="radio" id="radiobtn7" name="talla" class="input-hidden" value="Talla M" />
+        <label for="radiobtn7"><img class="image" src="/m.png" /></label>
+        <input type="radio" id="radiobtn8" name="talla" class="input-hidden" value="Disseny L" />
+        <label for="radiobtn8"><img class="image" src="/l.png" /></label>
+        <input type="radio" id="radiobtn9" name="talla" class="input-hidden" value="Talla XL" />
+        <label for="radiobtn9"><img class="image" src="/xl.png" /></label>
+        <input type="radio" id="radiobtn10" name="talla" class="input-hidden" value="Disseny XXL" />
+        <label for="radiobtn10"><img class="image" src="/xxl.png" /></label>
       </div>
     </div>
 
@@ -93,7 +96,7 @@
     <div class="field">
       <div class="header-label">
         <label>Persona d'entrega o direcció *</label>
-        <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem d'entregar sa camiseta o direcció d'entrega.</p>
+        <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem de donar sa teua camiseta o direcció d'entrega.</p>
       </div>
       <input id="entrega" name="entrega" type="textarea" placeholder="Carrer de Sant Joan n. 4" required>
     </div>
@@ -101,16 +104,23 @@
 
     <div class="field">
       <div class="header-label">
-        <label">Alguna cosa més a dir-nos?</label>
+        <label>Alguna cosa més a dir-nos?</label>
         <p class="sublabel"></p>
       </div>
       <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons">
     </div>
 
+    <div class="field">
+      <div class="header-label">
+        <label>Quantes camisetes vols amb aquesta configuració?</label>
+        <p class="sublabel"></p>
+      </div>
+      <input id="quantes" name="quantes" type="number" value="1" min="1" max="10" size="200">
+    </div>
 
-    <button id="email-submit" type="submit" class="send">Enviar</button>
-    <div>Si vols avançar es pagament, ho pots fer directament per Bizuum en aquest telèfon: 636671681 (Rita) i posant com a concepte es teu nom complert o es seguent codi: <p class="code" id="code" /></div>
     <input type="text" id="code-hide" name="code" style="display: none;">
+
+    <button id="email-submit" type="submit" class="send">Enviar!</button>
   </form>
 </body>
 
@@ -147,9 +157,18 @@
   body {
     font-size: 20px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .form {
+    max-width: 1200px;
   }
 
   .field {
+    width: 100%;
     background-color: #f3f3f3;
     border-radius: 10px;
     padding: 16px;
@@ -169,6 +188,12 @@
     flex-direction: column;
     gap: 16px;
     padding: 16px;
+  }
+
+  .talles {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
   }
 
   input[type=text],input[type=email] {
@@ -221,6 +246,8 @@
     border-radius: 16px;
     height: 40px;
     color: black;
+    min-width: 300px;
+    align-self: center;
   }
 
 
@@ -228,14 +255,34 @@
   /* For Hiding Radio Button Circles */
   position: absolute;
   left: -9999px;
-}
-input[type="radio"]:checked + label > img {
-  border: 1px solid rgb(157, 255, 0);
-  box-shadow: 0 0 3px 3px #9e00e2;
-}
-input[type="radio"] + label > img {
-  border: 1px rgb(0, 0, 0);
-  padding: 10px;
-  transition: 500ms all;
-}
+  }
+
+  input[type="radio"]:checked + label > img {
+    box-shadow: 0 0 3px 3px #9e00e2;
+  }
+
+  input[type="radio"] + label > img {
+    transition: 500ms all;
+  }
+
+  input[type="number"] {
+    border: 1px rgb(0, 0, 0);
+    font-size: 20px;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+  }
+
+  input[type=number]:hover::-webkit-inner-spin-button {
+
+    height: 40px;
+  }
+
+  .designs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
