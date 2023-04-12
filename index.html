@@ -21,12 +21,12 @@
   </div>
   <form id="form" class="form" name="submit-to-google-sheet">
     <p style="text-align: center; font-size: 24px; font-weight: 700;">Hola!</p>
-    <p style="text-align: center; font-size: 14px;">¡Ompl es formulari i assegura't de tenir camiseta aquest any. A es final de tot, podras triar si en vols mes d'una amb aquestes característiques! Per demanar-ne altres amb un altre disseny o característica, ompl un altre formulari!</p>
-
+    <p style="text-align: center; font-size: 14px; font-weight: 700;">Emplena aquest formulari i assegura't de tenir sa teua camiseta per aquestes festes.</p>
+    <p style="text-align: center; font-size: 14px;">Cada formulari està pensat per un mateix model i talla. Si en vols més amb altres característiques, hauràs d'emplenar un altre formulari. Per encomandes més grans podeu contactar directament amb nosaltres: dreamingroll.team@gmail.com / 636671681.</p>
     <div class="field">
       <div class="header-label">
-        <label for="nombre">Nom *</label>
-        <p class="sublabel">De sa persona que disfrutarà sa camiseta</p>
+        <label for="nombre">✨ NOM ✨</label>
+        <p class="sublabel">de sa persona que gaudirà de sa camiseta.</p>
       </div>
       <input id="nombre" name="nombre" type="text" placeholder="L'Amo de Son Blanc" required>
     </div>
@@ -34,8 +34,8 @@
 
     <div class="field">
       <div class="header-label">
-        <label for="email">Email, Instagram o Whatsapp *</label>
-        <p class="sublabel">Mus servira per confirmar amb tu es pedido i per comunicar-nos en cas de colca imprevist.</p>
+        <label for="email">✨ CONTACTE ✨</label>
+        <p class="sublabel">Email, Instagram o Whatsapp. Ens servirà per confirmar s'encomanda i per poder comunicar-nos en cas d'incidència.</p>
       </div>
       <input id="contacte" name="contacte" type="text" placeholder="@Lamo_7" required>
     </div>
@@ -43,7 +43,7 @@
 
     <div class="field">
       <div class="header-label">
-        <label>Disseny *</label>
+        <label>✨ DISSENY ✨</label>
         <p class="sublabel">Més fotos a n'es nostre Instagram (<a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>)</p>
       </div>
       <div class="designs">
@@ -57,12 +57,10 @@
 
     <div class="field">
       <div class="header-label">
-        <label>Talla *</label>
+        <label>✨ TALLA ✨</label>
         <p class="sublabel"></p>
       </div>
       <div class="talles">
-        <input type="radio" id="radiobtn11" name="talla" class="input-hidden" value="Talla XXS" />
-        <label for="radiobtn11"><img class="image" src="/xxs.png" /></label>
         <input type="radio" id="radiobtn5" name="talla" class="input-hidden" value="Talla XS" />
         <label for="radiobtn5"><img class="image" src="/xs.png" /></label>
         <input type="radio" id="radiobtn6" name="talla" class="input-hidden" value="Disseny S" />
@@ -81,7 +79,7 @@
 
     <div class="field">
       <div class="header-label">
-        <label>Tipus *</label>
+        <label>✨ TIPUS ✨</label>
         <p class="sublabel"></p>
       </div>
       <div>
@@ -95,28 +93,28 @@
 
     <div class="field">
       <div class="header-label">
-        <label>Persona d'entrega o direcció *</label>
-        <p class="sublabel">Nom i llinatges de sa persona a qui l'hi hem de donar sa teua camiseta o direcció d'entrega.</p>
+        <label>✨ PERSONA D'ENTREGA / DIRECCIÓ ✨</label>
+        <p class="sublabel">Nom i llinatges de sa persona que vindrà a recollir sa camiseta o direcció d'entrega.</p>
       </div>
       <input id="entrega" name="entrega" type="textarea" placeholder="Carrer de Sant Joan n. 4" required>
     </div>
 
+    <div class="field">
+      <div class="header-label">
+        <label>✨ Quantitat ✨</label>
+        <p class="sublabel">Quantes camisetes vols d'aquestes característiques? Per triar-ne d'altres, emplena un altre formulari.</p>
+      </div>
+      <input id="quantes" name="quantes" type="number" value="1" min="1" max="10" size="200">
+    </div>
 
     <div class="field">
       <div class="header-label">
-        <label>Alguna cosa més a dir-nos?</label>
-        <p class="sublabel"></p>
+        <label>✨ Preguntes ✨</label>
+        <p class="sublabel">Tens cap dubte o ens vols deixar un missatge? Et llegim!</p>
       </div>
       <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons">
     </div>
 
-    <div class="field">
-      <div class="header-label">
-        <label>Quantes camisetes vols amb aquesta configuració?</label>
-        <p class="sublabel"></p>
-      </div>
-      <input id="quantes" name="quantes" type="number" value="1" min="1" max="10" size="200">
-    </div>
 
     <input type="text" id="code-hide" name="code" style="display: none;">
 
