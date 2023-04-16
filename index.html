@@ -10,19 +10,21 @@
 
 <body style="margin: 0px">
   <p style="text-align: center; font-size: 24px; font-weight: 700; padding: 15px;">- DreamingRoll -</p>
-  <div class="header" style="background-color: #ff8c8ca2; width: 100%; padding: 15px">
+  <div class="header" style="background-color: #cae2ffa2; width: 100%; padding: 15px">
     <img src="/rita.png" class="image">
   </div>
-  <div id="buttons-next" style="display: none;">
-    <div>ENHORABONA! Hem registrat correctament sa teua pre-venda. Mus posarem en contacte amb tu per confirmar es teu pedido.</div>
-    <div>Si vols avançar es pagament, ho pots fer directament per Bizum en aquest telèfon: 636671681 (Rita) i posant com a concepte es teu nom complert o es seguent codi: <p class="code" id="code" /></div>
-    <p>Quan l'haguem rebut, contactarem amb tu per confirmar sa compra.</p>
-    <button onclick="window.location.reload()">Repetir formulari</button>
-    <button onclick="window.location = 'https://instagram.com/dreamingroll_art'">Sortir</button>
+  <div id="buttons-next"  class="step2" style="padding: 24px; display: none;">
+    <div><b>ENHORABONA!</b> Hem registrat correctament sa teua comanda. Durant es propers dies mus posarem en contacte amb tu per confirmar-la.</div>
+    <div>Si vols avançar es pagament, ho pots fer directament per Bizum en aquest telèfon: 636671681 (Rita) i posant com a concepte es nom de sa persona que hagis posat en es formulari <b>o</b> es següent codi: <p class="code" id="code" /></div>
+    <div style="display: flex; padding: 16px; gap: 10px; ">
+      <button class="send" onclick="window.location.reload()">Repetir formulari</button>
+      <button class="send"  onclick="window.location = 'https://instagram.com/dreamingroll'">Sortir</button>
+    </div>
   </div>
-  <div style="background-color: rgb(255, 230, 230); width: 100%; padding: 15px; box-sizing: border-box  ;">
-    <p style="text-align: center; font-size: 14px; font-weight: 700;">🇨🇭 Emplena aquest formulari i assegura't de tenir sa teua camiseta per aquestes festes. 🐴</p>
-    <p style="text-align: center; font-size: 14px;">Cada formulari està pensat per un mateix model i talla. Si en vols colcuna amb altres característiques, hauràs d'emplenar un altre formulari. Per encomandes complexes podeu contactar directament:<br> dreamingroll.team@gmail.com / 636671681.</p>
+  <div id="extra" style="background-color: rgb(193 208 255); width: 100%; padding: 15px; box-sizing: border-box  ;">
+    <!-- Cada formulari està pensat per un mateix model i talla. Si en vols colcuna amb altres característiques, hauràs d'emplenar un altre formulari.  -->
+    <p style="text-align: center; font-size: 14px; font-weight: 700;">🇨🇭 Emplena aquest formulari i assegura't de tenir sa teua camiseta per aquestes festes! 🐴</p>
+    <p style="text-align: center; font-size: 14px;">Per encomandes complexes podeu contactar directament:<br>@dreamingroll | dreamingroll.team@gmail.com | 636671681</p>
   </div>
   <form id="form" class="form" name="submit-to-google-sheet">
     <div class="field">
@@ -46,13 +48,19 @@
     <div class="field">
       <div class="header-label">
         <label>✨ Disseny ✨</label>
-        <p class="sublabel">Més fotos a n'es nostre Instagram <a href="https://www.instagram.com/dreamingroll_art/" target="_blank">@dreamingroll</a>!</p>
+        <p class="sublabel">Més fotos a n'es nostre Instagram <a href="https://www.instagram.com/dreamingroll/" target="_blank">@dreamingroll</a>!</p>
       </div>
       <div class="designs">
-        <input type="radio" id="radiobtn3" name="disseny" class="input-hidden" value="Disseny 1" />
-        <label for="radiobtn3"> <img class="image" src="/disseny1.jpeg" /></label>
-        <input type="radio" id="radiobtn4" name="disseny" class="input-hidden" value="Disseny 2" />
-        <label for="radiobtn4"><img class="image" src="/disseny2.jpeg" /></label>
+        <div>
+          <p class="disseny-text">Cavallet quan eres jove</p>
+          <input required type="radio" id="radiobtn3" name="disseny" class="input-hidden" value="Disseny 1" />
+          <label for="radiobtn3"> <img class="image" src="/disseny1.jpeg" /></label>
+        </div>
+        <div>
+          <p class="disseny-text">Tiruri pom pom</p>
+          <input required type="radio" id="radiobtn4" name="disseny" class="input-hidden" value="Disseny 2" />
+          <label for="radiobtn4"><img class="image" src="/disseny2.jpeg" /></label>
+        </div>
       </div>
     </div>
 
@@ -60,35 +68,41 @@
     <div class="field">
       <div class="header-label">
         <label>✨ Talla ✨</label>
-        <p class="sublabel"></p>
+        <p class="sublabel">Es tallatje es "normal". Guía orientativa: XS fins a 1'50cm, S fins a 1'60cm, M fins a 1'70cm, L fins a 1'80cm, XL fins a 1'90cm i 2XL a partir de 1'90cm.</p>
       </div>
       <div class="talles">
-        <input type="radio" id="radiobtn5" name="talla" class="input-hidden" value="Talla XS" />
-        <label for="radiobtn5"><img class="image" src="/xs.png" /></label>
-        <input type="radio" id="radiobtn6" name="talla" class="input-hidden" value="Disseny S" />
-        <label for="radiobtn6"><img class="image" src="/s.png" /></label>
-        <input type="radio" id="radiobtn7" name="talla" class="input-hidden" value="Talla M" />
-        <label for="radiobtn7"><img class="image" src="/m.png" /></label>
-        <input type="radio" id="radiobtn8" name="talla" class="input-hidden" value="Disseny L" />
-        <label for="radiobtn8"><img class="image" src="/l.png" /></label>
-        <input type="radio" id="radiobtn9" name="talla" class="input-hidden" value="Talla XL" />
-        <label for="radiobtn9"><img class="image" src="/xl.png" /></label>
-        <input type="radio" id="radiobtn10" name="talla" class="input-hidden" value="Disseny XXL" />
-        <label for="radiobtn10"><img class="image" src="/xxl.png" /></label>
+        <input required type="radio" id="radiobtn5" name="talla" class="input-hidden" value="Talla XS" />
+        <label required for="radiobtn5"><img class="image" src="/xs.png" /></label>
+        <input required type="radio" id="radiobtn6" name="talla" class="input-hidden" value="Disseny S" />
+        <label required for="radiobtn6"><img class="image" src="/s.png" /></label>
+        <input required type="radio" id="radiobtn7" name="talla" class="input-hidden" value="Talla M" />
+        <label required for="radiobtn7"><img class="image" src="/m.png" /></label>
+        <input required type="radio" id="radiobtn8" name="talla" class="input-hidden" value="Disseny L" />
+        <label required for="radiobtn8"><img class="image" src="/l.png" /></label>
+        <input required type="radio" id="radiobtn9" name="talla" class="input-hidden" value="Talla XL" />
+        <label required for="radiobtn9"><img class="image" src="/xl.png" /></label>
+        <input required type="radio" id="radiobtn10" name="talla" class="input-hidden" value="Disseny XXL" />
+        <label required for="radiobtn10"><img class="image" src="/xxl.png" /></label>
       </div>
     </div>
 
 
-    <div class="field">
+    <div class="field" id="tipus">
       <div class="header-label">
         <label>✨ Tipus ✨</label>
         <p class="sublabel"></p>
       </div>
-      <div>
-        <span>Mànigues</span>
-        <input type="radio" name="tipus" value="Manigues">
-        <span>Estirants</span>
-        <input type="radio" name="tipus" value="Estirants">
+      <div class="tipus">
+        <div>
+          <p class="disseny-text">Mànigues</p>
+          <input required type="radio" id="radiobtn11" name="tipus" class="input-hidden" value="Manigues" />
+          <label for="radiobtn11"><img class="image" src="/manigues.jpeg" /></label>
+        </div>
+        <div>
+          <p class="disseny-text">Estirants</p>
+          <input required type="radio" id="radiobtn12" name="tipus" class="input-hidden" value="Estirants" />
+          <label for="radiobtn12"><img class="image" src="/manigues.jpeg" /></label>
+        </div>
       </div>
     </div>
 
@@ -104,9 +118,9 @@
     <div class="field">
       <div class="header-label">
         <label>✨ Quantitat ✨</label>
-        <p class="sublabel">Quantes camisetes vols d'aquestes característiques? Per triar-ne colcuna d'un altre disseny, tall o tipus, emplena un altre formulari.</p>
+        <p class="sublabel">Quantes camisetes vols d'aquestes característiques? Per triar-ne colcuna d'un altre característica (disseny, talla o tipus), emplena un altre formulari.</p>
       </div>
-      <input id="quantes" name="quantes" type="number" value="1" min="1" max="10" size="200">
+      <input class="quantes" id="quantes" name="quantes" type="number" value="1" min="1" max="10" size="200" required>
     </div>
 
     <div class="field">
@@ -114,12 +128,11 @@
         <label>✨ Preguntes ✨</label>
         <p class="sublabel">Tens cap dubte o ens vols deixar un missatge? Et llegim!</p>
       </div>
-      <input id="observacions" name="observacions" type="textarea" placeholder="Pere Pons">
+      <input id="observacions" name="observacions" type="textarea" placeholder="Són súper xules!">
     </div>
 
 
     <input type="text" id="code-hide" name="code" style="display: none;">
-
     <button id="email-submit" type="submit" class="send">Enviar!</button>
   </form>
 </body>
@@ -145,6 +158,7 @@
         console.log('Success!', response);
         submit_button.innerText = "Done!";
         document.getElementById('form').style.display = 'none'
+        document.getElementById('extra').style.display = 'none'
         document.getElementById('buttons-next').style.display = 'inherit'
       })
       .catch(function (error) {
@@ -152,7 +166,20 @@
         submit_button.innerText = "Error!";
       })
   })
+
+document.getElementById('radiobtn3').addEventListener('click', function (event) {
+  document.getElementById('tipus').style.display = 'block'
+  document.getElementById('radiobtn11').setAttribute('required', true)
+  document.getElementById('radiobtn12').setAttribute('required', true)
+}, false);
+
+document.getElementById('radiobtn4').addEventListener('click', function (event) {
+  document.getElementById('tipus').style.display = 'none'
+  document.getElementById('radiobtn11').removeAttribute('required')
+  document.getElementById('radiobtn12').removeAttribute('required')
+}, false);
 </script>
+
 <style>
   body {
     font-size: 20px;
@@ -204,6 +231,13 @@
     justify-content: center;
   }
 
+  .tipus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
   .talles img {
     width: 60px;
   }
@@ -214,6 +248,14 @@
     border: 1px solid lightgray;
     padding-left: 10px;
     box-sizing: border-box;
+  }
+
+  .disseny-text {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: center;
+
   }
 
   input[type=textarea] {
@@ -284,6 +326,10 @@
     height: 40px;
   }
 
+  .quantes {
+    width: 100% !important;
+  }
+
   input[type=number]:hover::-webkit-inner-spin-button {
     height: 40px;
   }
@@ -294,5 +340,10 @@
     gap: 16px;
     justify-content: center;
     align-items: center;
+  }
+
+  .step2 {
+    display: flex;
+    flex-direction: column;
   }
 </style>
